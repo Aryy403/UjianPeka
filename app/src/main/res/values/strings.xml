@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ujian Peka</string>
+    <string name="tinkatPeka">Tingkat ke-Pekaan kamu adalah 200 Point</string>
+    <string name="isi_about">Aplikasi ini hanya sebatas
+        hiburan, jika ada pihak yang tersindir maka itu adalah benar adanya, wkwkwk</string>
+    <string name="musik">Music from www.Bensound.com</string>
+    <string name="gambar">Backgrund from www.subtlepatterns.com</string>
+    <string name="icon">Icon from www.icon8.com</string>
+</resources>

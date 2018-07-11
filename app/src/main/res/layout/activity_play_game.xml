@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayGame"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/nyawa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/bintang1"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/icon_nyawa"/>
+
+            <ImageView
+                android:id="@+id/bintang2"
+                android:layout_margin="5dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/icon_nyawa" />
+
+            <ImageView
+                android:id="@+id/bintang3"
+                android:layout_margin="5dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/icon_nyawa" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="28dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/icon_time" />
+
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:text="WAKTU"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POINT"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/logo_main"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_weight="1"
+        android:background="@android:color/holo_blue_dark"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/pertanyaan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:drawable/ic_delete" />
+
+    <TextView
+        android:id="@+id/pertanyaan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/custom_back"
+        android:padding="10dp"
+        android:text="Isi Pertanyaan"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_back"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <TextView
+                android:id="@+id/soal_0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/custom_btn"
+                android:padding="10dp"
+                android:text="Jawab 1" />
+
+            <TextView
+                android:id="@+id/soal_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/custom_btn"
+                android:padding="10dp"
+                android:text="Jawab 2" />
+
+            <TextView
+                android:id="@+id/soal_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/custom_btn"
+                android:padding="10dp"
+                android:text="Jawab 3" />
+
+            <TextView
+                android:id="@+id/soal_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/custom_btn"
+                android:padding="10dp"
+                android:text="Jawab 4" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
