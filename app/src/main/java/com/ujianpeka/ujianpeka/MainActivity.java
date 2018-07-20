@@ -1,15 +1,16 @@
 package com.ujianpeka.ujianpeka;
 
-import android.app.Application;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 /**
  * UjianPeka
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static MediaPlayer mpbg, mp;
     ImageButton btnPlay, btnExit, btnAbout;
+    Dialog popExit, popAbout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,24 +44,21 @@ public class MainActivity extends AppCompatActivity {
                 vibrate(getApplicationContext());
                 Intent intent = new Intent(MainActivity.this, PlayGame.class);
                 startActivity(intent);
+                finish();
             }
         });
 
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                playSoundSalah(getApplicationContext());
-                moveTaskToBack(true);
-                mpbg.stop();
+                dialogExit();
             }
         });
 
         btnAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                playSoundBenar(getApplicationContext());
-                Intent intent = new Intent(MainActivity.this, About.class);
-                startActivity(intent);
+                dialogAbout();
             }
         });
     }
@@ -86,9 +85,55 @@ public class MainActivity extends AppCompatActivity {
         v.vibrate(500);
     }
 
+    public void dialogExit(){
+        playSoundSalah(this);
+
+        popExit = new Dialog(this);
+        popExit.setContentView(R.layout.lay_pop_exit);
+        popExit.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        popExit.show();
+
+        ImageButton btnYess = (ImageButton) popExit.findViewById(R.id.yess);
+        ImageButton btnNoo = (ImageButton) popExit.findViewById(R.id.noo);
+
+        btnYess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playSoundSalah(getApplicationContext());
+                mpbg.stop();
+                MainActivity.this.finish();
+            }
+        });
+
+        btnNoo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playSoundBenar(getApplicationContext());
+                popExit.dismiss();
+            }
+        });
+    }
+
+    public void dialogAbout(){
+        playSoundBenar(this);
+
+        popAbout = new Dialog(this);
+        popAbout.setContentView(R.layout.lay_pop_about);
+        popAbout.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        popAbout.show();
+
+        ImageButton btnClose = (ImageButton) popAbout.findViewById(R.id.btnClose);
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playSoundSalah(getApplicationContext());
+                popAbout.dismiss();
+            }
+        });
+    }
 
     public void onBackPressed(){
-        moveTaskToBack(true);
-        mpbg.stop();
+        dialogExit();
     }
 }

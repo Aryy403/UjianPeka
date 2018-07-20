@@ -1,7 +1,5 @@
 package com.ujianpeka.ujianpeka;
 
-import java.util.Random;
-
 /**
  * UjianPeka
  * Code By Aryy404 on 11/07/2018
@@ -19,6 +17,8 @@ public class Soal {
             "Sayang... aku gemukan enggak?",
             "Sikap yang benar untuk menaggapi jika pacar kamu kentut",
             "Saat pasanganmu melirik cowok lain saat sedang jalan bareng, apa yang akan kamu lakukan?",
+            "Gimana Sikap Lu Saat Cewek Lu Ngechat Ketika Lu Main Game ?",
+            "Apa Tindakan Lu Ketika Cewek Lu Minta Di Anterin Pas Lu Lagi Sibuk ?",
     };
 
     private String pilihanJawaban[][] = {
@@ -30,7 +30,8 @@ public class Soal {
             {"Eeee.... ???","Iya, kamu agak gemuk sekarang","Aku nggak tau yang..","Enggak, kamu kurus"},
             {"Pura - pura cuek","Bertahan sekuat tenaga","Ngalihin pembicaraan","Tutup hidung"},
             {"Marah - marah","Diam - diam dendam","Seleding kepalanya","Sindir halus"},
-
+            {"Berhenti Main, Lalu Chatingan","Cuekin Aja","Bales Singkat","Cari Alesan"},
+            {"Anterin","Suruh Nunggu","Suruh Pulang Sendir","Minta Temen Wakilin"},
     };
 
     private String jawabanBenar[] = {
@@ -42,6 +43,8 @@ public class Soal {
             "Eeee.... ???",
             "Bertahan sekuat tenaga",
             "Seleding kepalanya",
+            "Bales Singkat",
+            "Suruh Nunggu",
     };
 
     public String getPertanyaan(int x){

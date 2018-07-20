@@ -84,7 +84,7 @@ public class PlayGame extends AppCompatActivity {
 
                 }
                 tvSkor.setText(""+skor);
-                Toast.makeText(getApplicationContext(), "Jawaban Salah", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "Jawaban Salah", Toast.LENGTH_SHORT).show();
                 setKonten();
             }
         };
@@ -101,7 +101,7 @@ public class PlayGame extends AppCompatActivity {
                     counter.cancel();
                     skor = skor + 10;
                     tvSkor.setText(""+skor);
-                    Toast.makeText(getApplicationContext(), "Jawaban Benar", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Jawaban Benar", Toast.LENGTH_SHORT).show();
                     setKonten();
                 }else{
                     if (bintang3.getVisibility() == View.VISIBLE){
@@ -123,7 +123,7 @@ public class PlayGame extends AppCompatActivity {
 
                     }
                     tvSkor.setText(""+skor);
-                    Toast.makeText(getApplicationContext(), "Jawaban Salah", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Jawaban Salah", Toast.LENGTH_SHORT).show();
                     setKonten();
                 }
             }
@@ -136,7 +136,7 @@ public class PlayGame extends AppCompatActivity {
                     counter.cancel();
                     skor = skor + 10;
                     tvSkor.setText(""+skor);
-                    Toast.makeText(getApplicationContext(), "Jawaban Benar", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Jawaban Benar", Toast.LENGTH_SHORT).show();
                     setKonten();
                 }else{
                     if (bintang3.getVisibility() == View.VISIBLE){
@@ -158,7 +158,7 @@ public class PlayGame extends AppCompatActivity {
 
                     }
                     tvSkor.setText(""+skor);
-                    Toast.makeText(getApplicationContext(), "Jawaban Salah", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Jawaban Salah", Toast.LENGTH_SHORT).show();
                     setKonten();
                 }
             }
@@ -171,7 +171,7 @@ public class PlayGame extends AppCompatActivity {
                     counter.cancel();
                     skor = skor + 10;
                     tvSkor.setText(""+skor);
-                    Toast.makeText(getApplicationContext(), "Jawaban Benar", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Jawaban Benar", Toast.LENGTH_SHORT).show();
                     setKonten();
                 }else{
                     if (bintang3.getVisibility() == View.VISIBLE){
@@ -193,7 +193,7 @@ public class PlayGame extends AppCompatActivity {
 
                     }
                     tvSkor.setText(""+skor);
-                    Toast.makeText(getApplicationContext(), "Jawaban Salah", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Jawaban Salah", Toast.LENGTH_SHORT).show();
                     setKonten();
                 }
             }
@@ -206,7 +206,7 @@ public class PlayGame extends AppCompatActivity {
                     counter.cancel();
                     skor = skor + 10;
                     tvSkor.setText(""+skor);
-                    Toast.makeText(getApplicationContext(), "Jawaban Benar", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Jawaban Benar", Toast.LENGTH_SHORT).show();
                     setKonten();
                 }else{
                     if (bintang3.getVisibility() == View.VISIBLE){
@@ -228,7 +228,7 @@ public class PlayGame extends AppCompatActivity {
 
                     }
                     tvSkor.setText(""+skor);
-                    Toast.makeText(getApplicationContext(), "Jawaban Salah", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Jawaban Salah", Toast.LENGTH_SHORT).show();
                     setKonten();
                 }
             }
@@ -241,18 +241,17 @@ public class PlayGame extends AppCompatActivity {
             String jumlahSkor = String.valueOf(skor);
 
             final Dialog dialog = new Dialog(this);
-            dialog.setContentView(R.layout.layout_custom_dialog);
+            dialog.setContentView(R.layout.lay_pop_hasil);
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            dialog.setTitle("Selesai");
 
             TextView textPoint = (TextView) dialog.findViewById(R.id.point_peka);
-            textPoint.setText("Point Kepekaan Mu Adalah "+jumlahSkor+" Point");
+            textPoint.setText("Point Kepekaan Mu Adalah "+jumlahSkor+" Point!! Belajar Lebih Giat Lagi!! :P");
             ImageView logoPop1 = (ImageView) dialog.findViewById(R.id.logo_pop_up);
             ImageView logoPop2 = (ImageView) dialog.findViewById(R.id.logo_pop_up2);
             ImageView logoPop3 = (ImageView) dialog.findViewById(R.id.logo_pop_up3);
-            logoPop1.setImageResource(R.drawable.icon_bintang);
-            logoPop2.setImageResource(R.drawable.icon_bintang);
-            logoPop3.setImageResource(R.drawable.icon_bintang);
+            logoPop1.setImageResource(R.drawable.ic_bintang);
+            logoPop2.setImageResource(R.drawable.bg_piala);
+            logoPop3.setImageResource(R.drawable.ic_bintang);
 
             ImageButton btnBack = (ImageButton) dialog.findViewById(R.id.ulang_main);
             ImageButton btnHome = (ImageButton) dialog.findViewById(R.id.kembali_home);
@@ -265,6 +264,7 @@ public class PlayGame extends AppCompatActivity {
                     vibrate(getApplicationContext());
                     Intent intent = new Intent(PlayGame.this, PlayGame.class);
                     startActivity(intent);
+                    finish();
                 }
             });
 
@@ -275,6 +275,7 @@ public class PlayGame extends AppCompatActivity {
                     playSoundBenar(getApplicationContext());
                     Intent intent = new Intent(PlayGame.this, MainActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             });
 

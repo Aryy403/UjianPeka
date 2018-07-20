@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PlayGame"
-    android:background="@drawable/background">
+    android:background="@drawable/bg_play">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,60 +21,71 @@
             android:id="@+id/nyawa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_gravity="left|center"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp">
 
             <ImageView
                 android:id="@+id/bintang1"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/icon_nyawa"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/ic_love"/>
 
             <ImageView
                 android:id="@+id/bintang2"
-                android:layout_margin="5dp"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:background="@drawable/icon_nyawa" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/ic_love" />
 
             <ImageView
                 android:id="@+id/bintang3"
-                android:layout_margin="5dp"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:background="@drawable/icon_nyawa" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/ic_love" />
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_gravity="center">
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="28dp"
-                android:layout_height="30dp"
-                app:srcCompat="@drawable/icon_time" />
-
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_time_a" />
             <TextView
                 android:id="@+id/timer"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:background="@drawable/bg_time_b"
                 android:text="WAKTU"
+                android:layout_gravity="bottom"
+                android:padding="3dp"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
         </LinearLayout>
+
 
         <TextView
             android:id="@+id/point"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="POINT"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_point"
+            android:padding="5dp"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold"/>
@@ -84,40 +94,48 @@
 
     <ImageView
         android:id="@+id/logo_main"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="160dp"
+        android:layout_height="200dp"
         android:layout_margin="5dp"
-        android:layout_marginBottom="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_weight="1"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@drawable/logo_play"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/pertanyaan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@android:drawable/ic_delete" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <TextView
-        android:id="@+id/pertanyaan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+    <LinearLayout
+        android:id="@+id/lay_pertanyaan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/custom_back"
-        android:padding="10dp"
-        android:text="Isi Pertanyaan"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:background="@drawable/bg_papan"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_main"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/pertanyaan"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Isi Soal"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="14sp"/>
+    </LinearLayout>
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -133,7 +151,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/custom_back"
+            android:background="@drawable/bg_jawab"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -143,7 +161,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="@drawable/custom_btn"
+                android:background="@drawable/custom_btn_jawab"
                 android:padding="10dp"
                 android:text="Jawab 1" />
 
@@ -152,7 +170,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="@drawable/custom_btn"
+                android:background="@drawable/custom_btn_jawab"
                 android:padding="10dp"
                 android:text="Jawab 2" />
 
@@ -161,7 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="@drawable/custom_btn"
+                android:background="@drawable/custom_btn_jawab"
                 android:padding="10dp"
                 android:text="Jawab 3" />
 
@@ -170,7 +188,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="@drawable/custom_btn"
+                android:background="@drawable/custom_btn_jawab"
                 android:padding="10dp"
                 android:text="Jawab 4" />
         </LinearLayout>
